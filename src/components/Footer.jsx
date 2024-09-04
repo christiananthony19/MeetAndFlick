@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa';
 import logoPic from '../assets/images/BgSub_LogoPic3.png'
 import logoName from '../assets/images/BgSub_LogoCaptureX3.png'
+import { NavLink } from 'react-router-dom';
 
 const LINKS = [
   {
@@ -38,12 +39,11 @@ const Footer =() => {
                 <h6 className="mb-3 text-sm font-medium opacity-40">{title}</h6>
                 {items.map((link) => (
                   <li key={link}>
-                    <a
-                      href="#"
+                    <NavLink to= {`/${link}`}
                       className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
                     >
                       {link}
-                    </a>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -67,7 +67,7 @@ const Footer =() => {
             </a>
             {/* GitHub Logo */}
             <a
-              href="#"
+              href="https://github.com/christiananthony19/MeetAndFlick"
               className="opacity-80 transition-opacity hover:opacity-100"
               aria-label="GitHub"
             >

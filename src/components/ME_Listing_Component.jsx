@@ -29,7 +29,7 @@ const ME_Listing = () => {
       {/* Slider Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Trending Events </h2>
-        <NavLink to='/Moviepage'>
+        <NavLink to='/EventPage'>
         <button className="text-cyan-500 hover:text-cyan-700">View More</button>
         </NavLink>
       </div>

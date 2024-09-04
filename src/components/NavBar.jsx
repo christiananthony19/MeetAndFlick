@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react';
 import logoPic from '../assets/images/BgSub_LogoPic3.png'
 import logoName from '../assets/images/BgSub_LogoCaptureX3.png'
 import { NavLink } from 'react-router-dom'
 
 
-const Navbar = () => {
+const Navbar = ({LoginToggle}) => {
 
   const ActiveLinkHighlight = ({isActive}) => 
       isActive ? 'bg-cyan-500 text-black hover:bg-slate-200 hover:text-black rounded-md px-3 py-2' 
                : 'text-black hover:bg-cyan-500 hover:text-black rounded-md px-3 py-2';
   
   return (
+    <>
      <nav className="bg-greywhite-700 border-b border-greywhite-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
@@ -38,9 +39,9 @@ const Navbar = () => {
                   className={ActiveLinkHighlight}
                   >See a Movie</NavLink>
                 <NavLink
-                  to="/login-register"
+                  to="/EventPage"
                   className={ActiveLinkHighlight}
-                  >Join an Event </NavLink>
+                  >Events & Happenings </NavLink>
               </div>
             </div>
             {/* Search Bar */}
@@ -56,8 +57,9 @@ const Navbar = () => {
             <div className="md:ml-auto">
               <div className="flex space-x-2 font-medium">
                 <NavLink
-                  to="/login"
+                  // to="/login"
                   className={ActiveLinkHighlight}
+                  onClick= {LoginToggle}
                   >LOGIN</NavLink>
                 <NavLink
                   to="/login-register"
@@ -69,6 +71,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+   </>
   )
 }
 export default Navbar
